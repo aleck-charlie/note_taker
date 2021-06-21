@@ -36,7 +36,6 @@ app.post('/api/notes', (req, res) => {
 app.delete('/api/notes/:id', (req, res) => {
     notes = notes.filter((note) => note.id !== req.params.id);
     writeFileAsync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes));
-    res.sendStatus(200);
 });
 
 
