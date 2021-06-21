@@ -30,13 +30,13 @@ app.post('/api/notes', (req, res) => {
     newNote.id = uuidv4();
     notes.push(newNote);
     writeFileAsync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes));
-    res.json(JSON.parse(newNote));
+    res.json((newNote));
     
 });
 
 app.delete('/api/notes/:id', (req, res) => {
     notes = notes.filter((note) => note.id !== req.params.id);
-    writeFileAsync(path.join(__dirname, 'db/db.json'), JSON.stringify(JSON.parse(notes)));
+    writeFileAsync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes));
 });
 
 
