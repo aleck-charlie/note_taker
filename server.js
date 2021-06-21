@@ -1,8 +1,6 @@
 const express = require("express");
 const path = require("path");
 const fs = require('fs');
-const util = require("util");
-const writeFileAsync = util.promisify(fs.writeFile);
 const { v4: uuidv4 } = require("uuid");
 
 const app = express();
