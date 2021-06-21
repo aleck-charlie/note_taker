@@ -19,17 +19,18 @@ app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/note
 app.get('/api/notes', (req, res) => res.sendFile(path.join(__dirname, './db/db.json')));
 
 app.get('/api/notes', (req, res) => {
-    fs.readFile("./db/db.json", (err, data) => {
+    fs.readFile("./db/db.json", 'utf8', (err, data) => {
         if (err) throw err;
+        console.log(data)
         res.json(JSON.parse(data))
     })
 });
 
-app.post('/api/notes', (req, res) => {
+app.post('/api/notes', async (req, res) => {
     let newNote = req.body;
     newNote.id = uuidv4();
     notes.push(newNote);
-    writeFileAsync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes));
+    await fs.writeFileSync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes))
     res.json((newNote));
     
 });
