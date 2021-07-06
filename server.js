@@ -35,9 +35,11 @@ app.post('/api/notes', async (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
     notes = notes.filter((note) => note.id !== req.params.id);
-    writeFileAsync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes));
+    writeFileAsync(path.join(__dirname, './db/db.json'), JSON.stringify(notes));
+    res.json(notes);
 });
 
+app.get("*", (req, res) => res.sendFile(path.join(dirPub, "index.html")));
 
 // Starts the server to begin listening
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
