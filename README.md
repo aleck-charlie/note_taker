@@ -7,7 +7,10 @@ This project is a simple note taker app using express and node.js to save and re
 This project can be found and installed at (https://github.com/aleck-charlie/note_taker)
 
 # Usage
-At the homepage, click 'Get Started' and type in a new note in the provided form and click save, and review a note by clicking a title in the saved notes bar. See images below
+Find the deployed app at (https://ac-express-notetaker.herokuapp.com/). On the homepage, click Get Started. Follow the provided field to create a new note and save, or review previously saved notes in the column at the left.
+
+# Known Bugs
+Currently, the delete button does not function but will be fixed in future versions
 
 ![Image 1](/assets/imgs/1.jpg)
 ![Image 2](/assets/imgs/2.jpg)
