@@ -1,3 +1,2 @@
 ## Express Note Taker
-
-![Screenshot](/assets/imgs/1.jpg)
+![Image 1](/assets/imgs/1.jpg)
